@@ -16,7 +16,6 @@ vnoremap < <gv
 
 " UI Stuff
 set number
-set wrap                " wrap lines
 set encoding=utf-8      " set encoding to UTF-8 (default was "latin1")
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw screen only when we need to
