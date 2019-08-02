@@ -1,6 +1,6 @@
 " Syntax
 syntax enable
-colorscheme badwolf
+colorscheme onedark
 
 " Find files recursively in cwd
 set path+=**
