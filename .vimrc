@@ -13,7 +13,6 @@ set expandtab " Make tabs spaces
 " Better Indenting
 vnoremap < <gv
 
-
 " UI Stuff
 set number
 set encoding=utf-8      " set encoding to UTF-8 (default was "latin1")
@@ -23,6 +22,7 @@ set showmatch           " highlight matching parentheses / brackets [{()}]
 set visualbell          " blink cursor on error, instead of beeping
 set autoindent          " copy indent from current line when starting a new line
 set smartindent         " even better autoindent (e.g. add indent after '{')
+set colorcolumn=120     " Sets the textwidth line
 set numberwidth=5
 set splitright
 set splitbelow
