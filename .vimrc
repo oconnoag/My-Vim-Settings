@@ -23,7 +23,6 @@ set showmatch           " highlight matching parentheses / brackets [{()}]
 set visualbell          " blink cursor on error, instead of beeping
 set autoindent          " copy indent from current line when starting a new line
 set smartindent         " even better autoindent (e.g. add indent after '{')
-set textwidth=80
 set numberwidth=5
 set splitright
 set splitbelow
