@@ -2,6 +2,10 @@
 syntax enable
 colorscheme onedark
 
+" Remove transparency
+hi Normal ctermbg=none
+
+
 " Find files recursively in cwd
 set path+=**
 
