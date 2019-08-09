@@ -1,7 +1,9 @@
 " Runtime path manipulation
-execute pathogen#infect()
-syntax on 
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
 filetype plugin indent on
+syntax on 
 
 " Syntax
 syntax enable
@@ -55,6 +57,10 @@ nnoremap <leader>l <C-w>l
 
 " Save the current python file in the buffer and run it in a blank screen
 nnoremap <buffer> <F5> :w <bar> :exec '!python' shellescape(@%, 1)<cr>
+
+ " Buffer jumping
+:nnoremap <silent> <leader>t :bnext<CR>
+:nnoremap <silent> <leader>T :bprevious<CR>"
 
 " Remember :ls views the current buffer (which files are open)
 "          :b lets you jump between those files in the buffer (with autocomplete)
