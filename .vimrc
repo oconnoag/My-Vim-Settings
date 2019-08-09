@@ -2,9 +2,8 @@
 syntax enable
 colorscheme onedark
 
-" Remove transparency
-hi Normal ctermbg=none
-
+" Remove transparency if it gets in the way
+" hi Normal ctermbg=none
 
 " Find files recursively in cwd
 set path+=**
@@ -53,6 +52,12 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
+
+" Save the current python file in the buffer and run it in a blank screen
+" imap <F5> <Esc>:w<CR>:!clear;python %<CR>
+nnoremap <buffer> <F5> :exec '!python' shellescape(@%, 1)<cr>
+nnoremap <buffer> <F6> :w <bar> :exec '!python' shellescape(@%, 1)<cr>
+
 
 " Remember :ls views the current buffer (which files are open)
 "          :b lets you jump between those files in the buffer (with autocomplete)
