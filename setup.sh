@@ -9,6 +9,9 @@ fi
 ####################################################################################################
 # Set up plugins
 ####################################################################################################
+# Store plugins in bundle directory
+cd ~/.vim && mkdir bundle
+
 # Nerdtree
 cd ~/.vim/bundle/ && git clone https://github.com/scrooloose/nerdtree.git
 
