@@ -66,6 +66,8 @@ nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
+nnoremap j gj
+nnoremap k gk
 
 " Save the current python file in the buffer and run it in a blank screen
 nnoremap <buffer> <F5> :w <bar> :exec '!python' shellescape(@%, 1)<cr>
@@ -73,6 +75,16 @@ nnoremap <buffer> <F5> :w <bar> :exec '!python' shellescape(@%, 1)<cr>
  " Buffer jumping
 :nnoremap <silent> <leader>t :bnext<CR>
 :nnoremap <silent> <leader>T :bprevious<CR>"
+
+" Plugins
+
+" NerdTree
+" I toggles hidden files
+nnoremap <Leader>f :NERDTreeToggle<Enter>         " Toggle the interface
+let NERDTreeQuitOnOpen = 1                        " NerdTree closes on open 
+
+" Close nerdtree if it is the only buffer open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Remember :ls views the current buffer (which files are open)
 "          :b lets you jump between those files in the buffer (with autocomplete)
