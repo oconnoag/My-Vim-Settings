@@ -1,9 +1,12 @@
-" Runtime path manipulation
+" Load pathogen
 filetype off
 call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 syntax on 
+
+" Auto source vimrc (changes automatically take effect)
+autocmd! bufwritepost .vimrc source %
 
 " Syntax
 syntax enable
@@ -14,6 +17,10 @@ colorscheme onedark
 
 " Find files recursively in cwd
 set path+=**
+
+" Copying and Pasting
+set pastetoggle=<F2>
+set clipboard=unnamed    " Allows for seemless copying and pasting in and out of vim
 
 " Tabs
 set tabstop=4
@@ -33,11 +40,14 @@ set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw screen only when we need to
 set showmatch           " highlight matching parentheses / brackets [{()}]
 set visualbell          " blink cursor on error, instead of beeping
-set colorcolumn=120     " Sets the textwidth line
 set numberwidth=5       " text width for numbe
 set splitright          " More natural splitting
 set splitbelow          " More natural splitting
 set title               " Puts filename in the tab
+
+" Add color column for the textwidth of the document
+set colorcolumn=120     " Sets the textwidth line
+highlight ColorColumn ctermbg=60               " Sets colors of colorcolumn
 
 " leader
 let mapleader=","      " Leader
@@ -45,6 +55,8 @@ let mapleader=","      " Leader
 " searching
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+set ignorecase          " ignore case in search
+set smartcase           " tries to guess casing
 nnoremap <leader><space> :nohlsearch<CR>  " Press ,space to stop highlighting
 
 " screen splitting
