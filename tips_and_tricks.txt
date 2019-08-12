@@ -1,0 +1,11 @@
+ctrl+p open ctrlp fuzzy finder
+
+tab autocompletes
+
+:ls show buffer contents (including whether or not a buffer was edited)
+:bd<N> closes a buffer
+
+gc comments (gcc comments a whole line)
+
+leader-f toggles nerdtree
+s opens buffer in vsp 
