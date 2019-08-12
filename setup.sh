@@ -17,3 +17,8 @@ cd ~/.vim/bundle/ && git clone https://github.com/scrooloose/nerdtree.git
 
 # Syntastic
 cd ~/.vim/bundle/ && git clone https://github.com/vim-syntastic/syntastic.git
+
+# tcomment
+cd ~/.vim/bundle/ && git clone https://github.com/tomtom/tcomment_vim.git
+
+
