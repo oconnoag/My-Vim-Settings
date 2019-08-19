@@ -27,4 +27,5 @@ cd ~/.vim/bundle/ && git clone https://github.com/ervandew/supertab.git
 # ctrlp
 cd ~/.vim/bundle && git clone https://github.com/ctrlpvim/ctrlp.vim
 
-
+# python-mode
+cd ~/.vim/bundle && https://github.com/python-mode/python-mode.git

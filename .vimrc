@@ -86,6 +86,11 @@ let NERDTreeQuitOnOpen = 1                        " NerdTree closes on open
 " Close nerdtree if it is the only buffer open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Python mode
+let g:pymode_options_colorcolumn = 120
+nnoremap <leader>q :pclose<CR>                    " Close the python-mode run window
+
+
 " Remember :ls views the current buffer (which files are open)
 "          :b lets you jump between those files in the buffer (with autocomplete)
 "          :find jump between files
