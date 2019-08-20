@@ -13,7 +13,7 @@ syntax enable
 colorscheme onedark
 
 " Remove transparency if it gets in the way
-" hi Normal ctermbg=none
+hi Normal ctermbg=none
 
 " Find files recursively in cwd
 set path+=**
@@ -48,6 +48,11 @@ set title               " Puts filename in the tab
 " Add color column for the textwidth of the document
 set colorcolumn=120     " Sets the textwidth line
 highlight ColorColumn ctermbg=60               " Sets colors of colorcolumn
+
+" No error bells/flash
+set noerrorbells
+set visualbell
+set t_vb= 
 
 " leader
 let mapleader=","      " Leader
@@ -90,9 +95,19 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:pymode_options_colorcolumn = 120
 nnoremap <leader>q :pclose<CR>                    " Close the python-mode run window
 
-
-" Remember :ls views the current buffer (which files are open)
-"          :b lets you jump between those files in the buffer (with autocomplete)
-"          :find jump between files
-
-
+"--------------------------------------------------------------------------------------------------------------------
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX))
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
