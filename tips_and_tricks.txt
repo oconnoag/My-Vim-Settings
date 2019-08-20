@@ -1,4 +1,5 @@
 ctrl+p open ctrlp fuzzy finder
+leader-p ctrl+p
 
 tab autocompletes
 
@@ -9,3 +10,17 @@ gc comments (gcc comments a whole line)
 
 leader-f toggles nerdtree
 s opens buffer in vsp 
+
+leader-b opens buffer list (you can use normal vim searching to search files within buffer)
+    - d will kill the buffer
+    - ctrl-v vertical splits
+    - ctrl-s horizontal splits
+
+ctrl-h/l cycle between open buffers (use the tab "airline")
+
+nerdtree, shift-I toggles dotfiles
+    - s is vert split
+    - i is hor split
+        - not sure why
+
+:scriptnames loads the config files that generate vim settings
