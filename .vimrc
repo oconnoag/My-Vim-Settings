@@ -10,10 +10,11 @@ autocmd! bufwritepost .vimrc source %
 
 " Syntax
 syntax enable
-colorscheme onedark
+colorscheme gruvbox
 
 " Remove transparency if it gets in the way
-hi Normal ctermbg=none
+set bg=dark
+" hi Normal ctermbg=none
 
 " Find files recursively in cwd
 set path+=**
@@ -78,12 +79,12 @@ nnoremap k gk
 nnoremap <buffer> <F5> :w <bar> :exec '!python' shellescape(@%, 1)<cr>
 
  " Buffer jumping
-:nnoremap <silent> <leader>t :bnext<CR>
-:nnoremap <silent> <leader>T :bprevious<CR>"
+:nnoremap  <C-h> :bnext<CR>
+:nnoremap  <C-l> :bprevious<CR>
 
-" Plugins
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NerdTree
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " I toggles hidden files
 nnoremap <Leader>f :NERDTreeToggle<Enter>         " Toggle the interface
 let NERDTreeQuitOnOpen = 1                        " NerdTree closes on open 
@@ -91,11 +92,51 @@ let NERDTreeQuitOnOpen = 1                        " NerdTree closes on open
 " Close nerdtree if it is the only buffer open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Python mode
-let g:pymode_options_colorcolumn = 120
-nnoremap <leader>q :pclose<CR>                    " Close the python-mode run window
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:pymode_python = 'python'
+" let g:pymode_options_colorcolumn = 120
+" nnoremap <leader>q :pclose<CR>                    " Close the python-mode run window
 
-"--------------------------------------------------------------------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Buffergator
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>b :BuffergatorOpen<CR>
+
+" Use the right side of the screen
+let g:buffergator_viewport_split_policy = 'R'
+
+" I want my own keymappings...
+let g:buffergator_suppress_keymaps = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" airline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline_theme='simple'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ctrl+p
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>p :CtrlP<cr>
+" Setup some default ignores
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
+
+" Use the nearest .git directory as the cwd
+" This makes a lot of sense if you are working on a project that is in version
+" control. It also supports works with .svn, .hg, .bzr.
+let g:ctrlp_working_path_mode = 'r'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Adjust syntax highlighting to 24-bit true color
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
@@ -104,8 +145,6 @@ if (empty($TMUX))
     "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   endif
-  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
   " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
   if (has("termguicolors"))
     set termguicolors
