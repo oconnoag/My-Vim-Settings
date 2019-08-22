@@ -79,8 +79,8 @@ nnoremap k gk
 nnoremap <buffer> <F5> :w <bar> :exec '!python' shellescape(@%, 1)<cr>
 
  " Buffer jumping
-:nnoremap  <C-h> :bnext<CR>
-:nnoremap  <C-l> :bprevious<CR>
+:nnoremap  <C-l> :bnext<CR>
+:nnoremap  <C-h> :bprevious<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NerdTree
