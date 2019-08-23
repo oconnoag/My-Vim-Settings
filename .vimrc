@@ -13,11 +13,11 @@ autocmd! bufwritepost .vimrc source %
 
 " Syntax
 syntax enable
-colorscheme gruvbox
+colorscheme onedark
 
 " Remove transparency if it gets in the way
 set bg=dark
-" hi Normal ctermbg=none
+hi Normal ctermbg=none
 
 " Find files recursively in cwd
 set path+=**
@@ -96,13 +96,6 @@ let NERDTreeQuitOnOpen = 1                        " NerdTree closes on open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Python mode
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:pymode_python = 'python'
-" let g:pymode_options_colorcolumn = 120
-" nnoremap <leader>q :pclose<CR>                    " Close the python-mode run window
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Buffergator
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>b :BuffergatorOpen<CR>
@@ -149,8 +142,7 @@ let g:gutentags_cache_dir = '~/.vim/ctags_dir'
 " Check Python files with flake8 and pylint.
 let b:ale_linters = ['flake8', 'pylint']
 " Fix Python files with autopep8 and yapf.
-let b:ale_fixers = ['autopep8', 'yapf']
-
+let b:ale_fixers = ['autopep8']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Adjust syntax highlighting to 24-bit true color
