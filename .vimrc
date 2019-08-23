@@ -5,6 +5,9 @@ call pathogen#helptags()
 filetype plugin indent on
 syntax on 
 
+" To disable a plugin, add it's bundle name to the following list
+let g:pathogen_disabled = []
+
 " Auto source vimrc (changes automatically take effect)
 autocmd! bufwritepost .vimrc source %
 
@@ -133,6 +136,21 @@ let g:ctrlp_custom_ignore = {
 " This makes a lot of sense if you are working on a project that is in version
 " control. It also supports works with .svn, .hg, .bzr.
 let g:ctrlp_working_path_mode = 'r'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" gutentags
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline+=%{gutentags#statusline()}  " Inform when ctags are being generated
+let g:gutentags_cache_dir = '~/.vim/ctags_dir'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" w0rp/ale
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Check Python files with flake8 and pylint.
+let b:ale_linters = ['flake8', 'pylint']
+" Fix Python files with autopep8 and yapf.
+let b:ale_fixers = ['autopep8', 'yapf']
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Adjust syntax highlighting to 24-bit true color
