@@ -11,6 +11,11 @@ let g:pathogen_disabled = []
 " Auto source vimrc (changes automatically take effect)
 autocmd! bufwritepost .vimrc source %
 
+" Remove trailing whitespace from certain filetypes
+" Not sure if this slows down saving, so not going crazy with the filetypes yet
+autocmd BufWritePre *.py %s/\s\+$//e
+autocmd BufWritePre *.txt %s/\s\+$//e
+
 " Syntax
 syntax enable
 colorscheme onedark
