@@ -17,7 +17,9 @@ colorscheme onedark
 
 " Remove transparency if it gets in the way
 set bg=dark
-hi Normal ctermbg=none
+" :hi Normal ctermbg=none
+" color sheet: https://jonasjacek.github.io/colors/ (233 and 234 seem nice)
+highlight Normal ctermbg=234
 
 " Find files recursively in cwd
 set path+=**
@@ -96,6 +98,11 @@ let NERDTreeQuitOnOpen = 1                        " NerdTree closes on open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tcommenter
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>c :TComment<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Buffergator
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>b :BuffergatorOpen<CR>
@@ -141,8 +148,17 @@ let g:gutentags_cache_dir = '~/.vim/ctags_dir'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Check Python files with flake8 and pylint.
 let b:ale_linters = ['flake8', 'pylint']
-" Fix Python files with autopep8 and yapf.
-let b:ale_fixers = ['autopep8']
+let g:ale_python_flake8_options = '--ignore=E501, --max-line-length=119'
+
+" if you don't want linters to run on opening a file
+let g:ale_lint_on_enter = 0
+
+" Open the ALE window
+nnoremap <leader>a :ALEToggle<CR>
+
+" Jump between errors
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Adjust syntax highlighting to 24-bit true color

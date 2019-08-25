@@ -24,3 +24,5 @@ nerdtree, shift-I toggles dotfiles
         - not sure why
 
 :scriptnames loads the config files that generate vim settings
+
+:ALEInfo shows ale configs
