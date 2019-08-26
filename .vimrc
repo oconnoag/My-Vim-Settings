@@ -156,7 +156,10 @@ let b:ale_linters = ['flake8', 'pylint']
 let g:ale_python_flake8_options = '--ignore=E501, --max-line-length=119'
 
 " if you don't want linters to run on opening a file
+" and only lint on save
 let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
 
 " Open the ALE window
 nnoremap <leader>a :ALEToggle<CR>
