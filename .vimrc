@@ -85,6 +85,15 @@ nnoremap <leader>l <C-w>l
 nnoremap j gj
 nnoremap k gk
 
+" Vim tabs
+nmap <leader>t :tabnew<cr>
+nmap <leader>T :tabclose<cr>
+
+" Insert/Decrease split sizes
+map <leader>= :vertical resize +10<CR>
+map <leader>- :vertical resize -10<CR>
+
+
 " Save the current python file in the buffer and run it in a blank screen
 nnoremap <buffer> <F5> :w <bar> :exec '!python' shellescape(@%, 1)<cr>
 
@@ -131,6 +140,7 @@ let g:airline_theme='simple'
 " ctrl+p
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>p :CtrlP<cr>
+
 " Setup some default ignores
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
@@ -154,6 +164,7 @@ let g:gutentags_cache_dir = '~/.vim/ctags_dir'
 " Check Python files with flake8 and pylint.
 let b:ale_linters = ['flake8', 'pylint']
 let g:ale_python_flake8_options = '--ignore=E501, --max-line-length=119'
+let g:ale_python_pylint_options = '-d invalid-name,line-too-long'
 
 " if you don't want linters to run on opening a file
 " and only lint on save
