@@ -93,13 +93,18 @@ nmap <leader>T :tabclose<cr>
 map <leader>= :vertical resize +10<CR>
 map <leader>- :vertical resize -10<CR>
 
-
 " Save the current python file in the buffer and run it in a blank screen
 nnoremap <buffer> <F5> :w <bar> :exec '!python' shellescape(@%, 1)<cr>
 
  " Buffer jumping
 :nnoremap  <C-l> :bnext<CR>
 :nnoremap  <C-h> :bprevious<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Save & load sessions
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <F2> :mksession! ~/.vim/.vim_session <cr> " Quick write session with F2
+map <F3> :source ~/.vim/.vim_session <cr>     " And load session with F3
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NerdTree
