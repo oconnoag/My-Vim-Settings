@@ -26,6 +26,9 @@ set bg=dark
 " color sheet: https://jonasjacek.github.io/colors/ (233 and 234 seem nice)
 highlight Normal ctermbg=234
 
+" Vertsplit full | instead of a bunch of pipes
+set fillchars+=vert:│
+
 " Find files recursively in cwd
 set path+=**
 
@@ -156,6 +159,16 @@ let g:ctrlp_custom_ignore = {
 " This makes a lot of sense if you are working on a project that is in version
 " control. It also supports works with .svn, .hg, .bzr.
 let g:ctrlp_working_path_mode = 'r'
+
+" Speed up searching
+" -----------------
+"  Cache saved to a stable file for quick cache access
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+
+"  Use ag instead of vim's default globpath -- should be faster
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gutentags
