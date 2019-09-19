@@ -198,6 +198,21 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" simpylfold
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:SimpylFold_fold_docstring = 0
+let g:SimpylFold_fold_import = 0
+
+" Ensure that {}, [] motions don't open folds
+set foldopen-=block
+
+" Fold color (cyan)
+highlight Folded ctermfg=51
+
+" set fold level to open up classes
+set foldlevel=1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Adjust syntax highlighting to 24-bit true color
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.

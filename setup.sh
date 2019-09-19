@@ -43,3 +43,6 @@ cd ~/.vim/bundle && git clone https://github.com/ludovicchabant/vim-gutentags.gi
 
 # w0rp/ale
 cd ~/.vim/bundle && git clone https://github.com/dense-analysis/ale.git
+
+# simpylfold - Python code folding
+cd ~/.vim/bundle && git clone https://github.com/tmhedberg/SimpylFold.git
