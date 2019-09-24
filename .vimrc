@@ -212,6 +212,9 @@ highlight Folded ctermfg=51
 " set fold level to open up classes
 set foldlevel=1
 
+" set folding off by default (toggle with zi)
+set nofoldenable
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Adjust syntax highlighting to 24-bit true color
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
