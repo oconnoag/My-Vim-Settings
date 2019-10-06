@@ -163,11 +163,17 @@ let g:ctrlp_working_path_mode = 'r'
 " Speed up searching
 " -----------------
 "  Cache saved to a stable file for quick cache access
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-
+" let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+"
 "  Use ag instead of vim's default globpath -- should be faster
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" if executable('ag')
+"   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" endif
+
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -22,6 +22,7 @@ cd ~/.vim/bundle/ && git clone https://github.com/tomtom/tcomment_vim.git
 cd ~/.vim/bundle/ && git clone https://github.com/ervandew/supertab.git
 
 # ctrlp
+brew install ripgrep  # Faster searching than ag
 cd ~/.vim/bundle && git clone https://github.com/ctrlpvim/ctrlp.vim
 
 # vim-polyglot
