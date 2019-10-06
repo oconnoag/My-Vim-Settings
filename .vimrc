@@ -22,9 +22,9 @@ colorscheme onedark
 
 " Remove transparency if it gets in the way
 set bg=dark
-" :hi Normal ctermbg=none
+highlight Normal ctermbg=none
 " color sheet: https://jonasjacek.github.io/colors/ (233 and 234 seem nice)
-highlight Normal ctermbg=234
+" highlight Normal ctermbg=234
 
 " Vertsplit full | instead of a bunch of pipes
 set fillchars+=vert:│
@@ -175,12 +175,6 @@ if executable('rg')
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   let g:ctrlp_use_caching = 0
 endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" gutentags
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline+=%{gutentags#statusline()}  " Inform when ctags are being generated
-let g:gutentags_cache_dir = '~/.vim/ctags_dir'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " w0rp/ale

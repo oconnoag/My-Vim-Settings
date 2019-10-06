@@ -38,10 +38,6 @@ cd ~/.vim/bundle && git clone https://github.com/jeetsukumaran/vim-buffergator.g
 cd ~/.vim/bundle && git clone https://github.com/vim-airline/vim-airline.git
 cd ~/.vim/bundle && git clone https://github.com/vim-airline/vim-airline-themes 
 
-# gutentags (requires universal-ctags)
-brew install --HEAD universal-ctags/universal-ctags/universal-ctags
-cd ~/.vim/bundle && git clone https://github.com/ludovicchabant/vim-gutentags.git
-
 # w0rp/ale
 cd ~/.vim/bundle && git clone https://github.com/dense-analysis/ale.git
 

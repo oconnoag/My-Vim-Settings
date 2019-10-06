@@ -1,3 +1,4 @@
 bundle/*
 ctags_dir/*
 .vim_session
+tags/*
