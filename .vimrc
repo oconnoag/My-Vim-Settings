@@ -106,8 +106,8 @@ nnoremap <buffer> <F5> :w <bar> :exec '!python' shellescape(@%, 1)<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Save & load sessions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <F2> :mksession! ~/.vim/.vim_session <cr> " Quick write session with F2
-map <F3> :source ~/.vim/.vim_session <cr>     " And load session with F3
+map <F3> :mksession! ~/.vim/.vim_session <cr> " Quick write session with F3
+map <F4> :source ~/.vim/.vim_session <cr>     " And load session with F4
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NerdTree
