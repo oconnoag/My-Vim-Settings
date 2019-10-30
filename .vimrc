@@ -69,7 +69,7 @@ set visualbell
 set t_vb= 
 
 " leader
-let mapleader=","      " Leader
+let mapleader="\<Space>"      " Leader
 
 " searching
 set incsearch           " search as characters are entered
@@ -128,6 +128,7 @@ nnoremap <leader>c :TComment<CR>
 " Buffergator
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>b :BuffergatorOpen<CR>
+nnoremap <leader>B :BuffergatorClose<CR>
 
 " Use the right side of the screen
 let g:buffergator_viewport_split_policy = 'R'
@@ -143,6 +144,7 @@ let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_theme='simple'
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctrl+p
@@ -237,3 +239,8 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Load custom snippets - ÷ (insert mode leader) is <option-?>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+runtime ./snippets.vim
