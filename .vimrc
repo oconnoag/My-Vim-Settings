@@ -112,7 +112,6 @@ map <F4> :source ~/.vim/.vim_session <cr>     " And load session with F4
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NerdTree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" I toggles hidden files
 nnoremap <Leader>f :NERDTreeToggle<Enter>         " Toggle the interface
 let NERDTreeQuitOnOpen = 1                        " NerdTree closes on open 
 

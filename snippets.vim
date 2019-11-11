@@ -5,7 +5,7 @@
 :inoremap ∆main if __name__ == "__main__":<cr>
 
 " pdb
-:inoremap ∆pdb import pdb; pdb.set_trace()
+:inoremap ππ import pdb; pdb.set_trace()
 
 " file attrs
 :inoremap ∆file __author__ = "Alijah O'Connor"<cr>__copyright__ = "Copyright 2019, ArcherDX"<cr>__credits__ = ["Alijah O'Connor"]<cr>__maintainer__ = "Alijah O'Connor"<cr>__email__ = "aoconnor@archerdx.com"<cr>
@@ -18,6 +18,3 @@
 
 " python function
 :inoremap ∆def def fxn():<cr>"""<cr>"""<cr>pass<up><up><up><left><left><left><ESC>
-
-"queries
-:inoremap ∆""" def """<cr>"""<up><cr>
