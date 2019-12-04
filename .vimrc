@@ -12,9 +12,11 @@ let g:pathogen_disabled = []
 autocmd! bufwritepost .vimrc source %
 
 " Remove trailing whitespace from certain filetypes
-" Not sure if this slows down saving, so not going crazy with the filetypes yet
 autocmd BufWritePre *.py %s/\s\+$//e
 autocmd BufWritePre *.txt %s/\s\+$//e
+
+" Disable syntax highlighting for .rst files (big performance gain)
+autocmd BufRead,BufNewFile   *.rst setlocal syntax=OFF
 
 " Syntax
 syntax enable
@@ -203,6 +205,12 @@ nnoremap <leader>a :ALEToggle<CR>
 " Jump between errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Jedi
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:jedi#popup_on_dot = 0
+let g:jedi#completions_enabled = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " simpylfold
