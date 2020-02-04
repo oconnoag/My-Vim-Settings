@@ -1,5 +1,6 @@
 " executable scripts need interpetter path
 :inoremap ∆env #!/usr/bin/env python<cr>
+:inoremap ∆sh #!/bin/bash<cr>
 
 " if __name__ == \"__main__\" block
 :inoremap ∆main if __name__ == "__main__":<cr>
