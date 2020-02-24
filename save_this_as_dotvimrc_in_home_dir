@@ -1,5 +1,0 @@
-" Use this file to effectively load the vimrc settings by moving it to the home
-" directory and changing its name to .vimrc
-
-let $MYVIMRC="~/.vim/.vimrc"
-source $MYVIMRC

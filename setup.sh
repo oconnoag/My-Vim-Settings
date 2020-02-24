@@ -1,10 +1,12 @@
 # Set up main .vimrc (this file will pull in features from this .vim 
 #  - I have it set up this way so that I can version control my .vimrc file easily
 # (Only perform if that file exists)
-FILE=~/.vim/save_this_as_dotvimrc_in_home_dir
-if test -f "$FILE"; then
-    mv $FILE ~/.vimrc
-fi
+
+# FILE=~/.vim/save_this_as_dotvimrc_in_home_dir
+# if test -f "$FILE"; then
+#     mv $FILE ~/.vimrc
+# fi
+ln -s ~/.vim/.vimrc ~/.vimrc
 
 ####################################################################################################
 # Set up plugins
