@@ -23,7 +23,7 @@ syntax enable
 colorscheme onedark
 
 " Remove transparency if it gets in the way
-set bg=dark
+" set bg=dark
 " :hi Normal ctermbg=none
 " color sheet: https://jonasjacek.github.io/colors/ (233 and 234 seem nice)
 highlight Normal ctermbg=234
@@ -36,7 +36,7 @@ set path+=**
 
 " Copying and Pasting
 set pastetoggle=<F2>
-set clipboard=unnamed    " Allows for seemless copying and pasting in and out of vim
+set clipboard=unnamed    " Allows for seamless copying and pasting in and out of vim
 
 " Tabs
 set tabstop=4
@@ -56,7 +56,7 @@ set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw screen only when we need to
 set showmatch           " highlight matching parentheses / brackets [{()}]
 set visualbell          " blink cursor on error, instead of beeping
-set numberwidth=5       " text width for numbe
+set numberwidth=5       " text width for number
 set splitright          " More natural splitting
 set splitbelow          " More natural splitting
 set title               " Puts filename in the tab
@@ -90,6 +90,13 @@ nnoremap <leader>l <C-w>l
 nnoremap j gj
 nnoremap k gk
 
+" Turn on/off line numbers
+nmap <leader>n :set nonu<cr>
+nmap <leader>N :set nu<cr>
+
+" Select all
+nmap <leader>A ggVG
+
 " Vim tabs
 nmap <leader>t :tabnew<cr>
 nmap <leader>T :tabclose<cr>
@@ -97,6 +104,9 @@ nmap <leader>T :tabclose<cr>
 " Insert/Decrease split sizes
 map <leader>= :vertical resize +10<CR>
 map <leader>- :vertical resize -10<CR>
+
+" Spell check -- be sure to use z= to get spelling suggestions
+set spell
 
 " Save the current python file in the buffer and run it in a blank screen
 nnoremap <buffer> <F5> :w <bar> :exec '!python' shellescape(@%, 1)<cr>
@@ -109,7 +119,8 @@ nnoremap <buffer> <F5> :w <bar> :exec '!python' shellescape(@%, 1)<cr>
 " Save & load sessions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <F3> :mksession! ~/.vim/.vim_session <cr> " Quick write session with F3
-map <F4> :source ~/.vim/.vim_session <cr>     " And load session with F4
+map <F4> :source ~/.vim/.vim_session <cr> :highlight Normal ctermbg=234 <cr>   " And load session with F4 
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Persistent Undo 
@@ -195,9 +206,10 @@ let g:gutentags_cache_dir = '~/.vim/ctags_dir'
 " w0rp/ale
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Check Python files with flake8 and pylint.
+" let g:ale_echo_msg_format = '%linter% says "%s"'
 let b:ale_linters = ['flake8', 'pylint']
 let g:ale_python_flake8_options = '--ignore=E501, --max-line-length=119'
-let g:ale_python_pylint_options = '-d invalid-name,line-too-long'
+let g:ale_python_pylint_options = '-d invalid-name,line-too-long,protected-access'
 
 " if you don't want linters to run on opening a file
 " and only lint on save
