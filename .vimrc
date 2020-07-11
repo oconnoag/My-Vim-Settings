@@ -80,7 +80,7 @@ set ignorecase          " ignore case in search
 set smartcase           " tries to guess casing
 nnoremap <leader><space> :nohlsearch<CR>  " Press ,space to stop highlighting
 
-" screen splitting
+" Screen splitting
 nnoremap <silent> <leader>s :split<CR>
 nnoremap <silent> <leader>v :vsplit<CR>
 nnoremap <leader>h <C-w>h
@@ -90,9 +90,17 @@ nnoremap <leader>l <C-w>l
 nnoremap j gj
 nnoremap k gk
 
-" Turn on/off line numbers
-nmap <leader>n :set nonu<cr>
-nmap <leader>N :set nu<cr>
+" Finally, a way to yank things into the clipboard
+vnoremap <silent> <leader>y :<CR>:let @a=@" \| execute "normal! vgvy" \| let res=system("pbcopy", @") \| let @"=@a<CR>
+
+" Duplicate current line
+nmap <leader>d Yp
+
+" Toggle line numbers
+nmap <leader>n :set nu!<cr>
+
+" Toggle hidden characters
+nmap <leader>L :set list!<cr>
 
 " Select all
 nmap <leader>A ggVG
@@ -107,6 +115,9 @@ map <leader>- :vertical resize -10<CR>
 
 " Spell check -- be sure to use z= to get spelling suggestions
 set spell
+
+" Toggle spell
+:nnoremap  <leader>S :set spell!<CR>
 
 " Save the current python file in the buffer and run it in a blank screen
 nnoremap <buffer> <F5> :w <bar> :exec '!python' shellescape(@%, 1)<cr>
@@ -136,11 +147,6 @@ let NERDTreeQuitOnOpen = 1                        " NerdTree closes on open
 
 " Close nerdtree if it is the only buffer open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" tcommenter
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>c :TComment<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Buffergator
