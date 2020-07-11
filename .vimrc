@@ -115,6 +115,7 @@ map <leader>- :vertical resize -10<CR>
 
 " Spell check -- be sure to use z= to get spelling suggestions
 set spell
+hi SpellBad cterm=underline
 
 " Toggle spell
 :nnoremap  <leader>S :set spell!<CR>
@@ -222,6 +223,10 @@ let g:ale_python_pylint_options = '-d invalid-name,line-too-long,protected-acces
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
+
+" Style settings of the errors and warnings
+highlight ALEError ctermbg=red ctermfg=white cterm=underline,bold
+highlight ALEWarning ctermbg=blue ctermfg=white cterm=underline,bold
 
 " Open the ALE window
 nnoremap <leader>a :ALEToggle<CR>

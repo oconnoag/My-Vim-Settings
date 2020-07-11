@@ -138,3 +138,12 @@ DataFrame
 pos
 chrom
 pyfaidx
+log10
+MaxAltFreq
+Gnomad
+ints
+Chr1
+GTF
+indel
+del
+OrderID
