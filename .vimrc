@@ -26,7 +26,8 @@ colorscheme onedark
 " set bg=dark
 " :hi Normal ctermbg=none
 " color sheet: https://jonasjacek.github.io/colors/ (233 and 234 seem nice)
-highlight Normal ctermbg=234
+" highlight Normal ctermbg=234  " < Vim 8.2
+highlight Normal guibg=#1c1c1c  " >= Vim 8.2 (1c1c1c == 234)
 
 " Vertsplit full | instead of a bunch of pipes
 set fillchars+=vert:│
@@ -60,6 +61,7 @@ set numberwidth=5       " text width for number
 set splitright          " More natural splitting
 set splitbelow          " More natural splitting
 set title               " Puts filename in the tab
+set backspace=2         " Always backspace in insert mode
 
 " Add color column for the textwidth of the document
 set colorcolumn=120     " Sets the textwidth line
@@ -208,6 +210,8 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set statusline+=%{gutentags#statusline()}  " Inform when ctags are being generated
 let g:gutentags_cache_dir = '~/.vim/ctags_dir'
+
+" let g:gen_tags#ctags_opts = '-u'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " w0rp/ale
