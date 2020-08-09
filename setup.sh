@@ -16,7 +16,7 @@ install_via_brew_or_yum() {
 }
 
 # Try to get the latest and greatest vim
-# install_via_brew_or_yum vim
+# install_via_brew_or_yum vim@8.2
 
 # Symlink .vimrc to home dir
 ln -s ~/.vim/.vimrc ~/.vimrc
