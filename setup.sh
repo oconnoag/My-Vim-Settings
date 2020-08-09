@@ -1,6 +1,23 @@
 #!/bin/bash
 # Set up main .vimrc with all pathogen plugins
 
+
+install_via_brew_or_yum() {
+    package=$1
+
+    # Install bash-completion
+    if type brew &> /dev/null; then
+        brew install $package
+    elif type yum &> /dev/null; then
+        yum install -y $package
+    else
+        echo "Could not download $package on this system because there is no brew or yum present; need to find another way"
+    fi
+}
+
+# Try to get the latest and greatest vim
+# install_via_brew_or_yum vim
+
 # Symlink .vimrc to home dir
 ln -s ~/.vim/.vimrc ~/.vimrc
 
@@ -10,7 +27,7 @@ ln -s ~/.vim/.vimrc ~/.vimrc
 
 # Store plugins in bundle directory
 cd ~/.vim && mkdir bundle
-cd ~/.vim/bundle/ 
+cd ~/.vim/bundle/
 
 # Nerdtree
 git clone https://github.com/scrooloose/nerdtree.git
@@ -35,7 +52,7 @@ git clone https://github.com/jeetsukumaran/vim-buffergator.git
 
 # vim-airline
 git clone https://github.com/vim-airline/vim-airline.git
-git clone https://github.com/vim-airline/vim-airline-themes 
+git clone https://github.com/vim-airline/vim-airline-themes
 
 # gutentags (requires universal-ctags)
 git clone https://github.com/ludovicchabant/vim-gutentags.git
@@ -47,15 +64,14 @@ git clone https://github.com/dense-analysis/ale.git
 git clone https://github.com/tmhedberg/SimpylFold.git
 
 # Other dependencies (will only install if brew is installed)
+# Faster searching than ag
+[[ ! -z ripgrep ]] || install_via_brew_or_yum ripgrep
+
+# ctags for glutentags
 if [ ! -z brew ]; then
-    # Faster searching than ag
-    [[ ! -z ripgrep ]] || brew install ripgrep
-
-    # ctags for glutentags
     brew install --HEAD universal-ctags/universal-ctags/universal-ctags
-
-    # Linters for ALE
-    [[ ! -z flake8 ]] || brew install flake8
-    [[ ! -z pylint ]] || brew install pylint
 fi
 
+# Linters for ALE
+[[ ! -z flake8 ]] || install_via_brew_or_yum flake8
+[[ ! -z pylint ]] || install_via_brew_or_yum pylint
