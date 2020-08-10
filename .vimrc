@@ -27,7 +27,7 @@ colorscheme onedark
 " :hi Normal ctermbg=none
 " color sheet: https://jonasjacek.github.io/colors/ (233 and 234 seem nice)
 " highlight Normal ctermbg=234  " < Vim 8.2
-highlight Normal guibg=#1c1c1c  " >= Vim 8.2 (1c1c1c == 234)
+highlight Normal guibg=#151515
 
 " Vertsplit full | instead of a bunch of pipes
 set fillchars+=vert:│
