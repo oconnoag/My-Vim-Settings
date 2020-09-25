@@ -12,3 +12,6 @@
 
 " python function
 :inoremap ∆def def fxn():<cr>"""<cr>"""<cr>pass<up><up><up><left><left><left><ESC>
+
+" python function
+:inoremap † #TODO:<space><space>

@@ -15,6 +15,11 @@ autocmd! bufwritepost .vimrc source %
 autocmd BufWritePre *.py %s/\s\+$//e
 autocmd BufWritePre *.txt %s/\s\+$//e
 
+" Convert single quotes to double quotes for string literals (NOTE: will not
+" work on string literals that contain double quotes within them). Command
+" runs when buffer is written to file (PYTHON ONLY)
+autocmd BufWritePre *.py %s/'\([^'^"]*\)'/"\1"/gce
+
 " Disable syntax highlighting for .rst files (big performance gain)
 autocmd BufRead,BufNewFile   *.rst setlocal syntax=OFF
 
@@ -37,7 +42,7 @@ set path+=**
 
 " Copying and Pasting
 set pastetoggle=<F2>
-set clipboard=unnamed    " Allows for seamless copying and pasting in and out of vim
+" set clipboard=unnamed    " Allows for seamless copying and pasting in and out of vim
 
 " Tabs
 set tabstop=4
@@ -81,6 +86,9 @@ set hlsearch            " highlight matches
 set ignorecase          " ignore case in search
 set smartcase           " tries to guess casing
 nnoremap <leader><space> :nohlsearch<CR>  " Press ,space to stop highlighting
+
+" Find string literals 
+nnoremap <leader>' /\v'([^"^']*)'<CR>
 
 " Screen splitting
 nnoremap <silent> <leader>s :split<CR>
