@@ -228,7 +228,7 @@ let g:gutentags_cache_dir = '~/.vim/ctags_dir'
 " let g:ale_echo_msg_format = '%linter% says "%s"'
 let b:ale_linters = ['flake8', 'pylint']
 let g:ale_python_flake8_options = '--ignore=E501, --max-line-length=119'
-let g:ale_python_pylint_options = '-d invalid-name,line-too-long,protected-access'
+let g:ale_python_pylint_options = '-d invalid-name,line-too-long,protected-access,too-few-public-methods,too-many-arguments,useless-object-inheritance'
 
 " if you don't want linters to run on opening a file
 " and only lint on save
