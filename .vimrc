@@ -18,7 +18,7 @@ autocmd BufWritePre *.txt %s/\s\+$//e
 " Convert single quotes to double quotes for string literals (NOTE: will not
 " work on string literals that contain double quotes within them). Command
 " runs when buffer is written to file (PYTHON ONLY)
-autocmd BufWritePre *.py %s/'\([^'^"]*\)'/"\1"/gce
+autocmd BufWritePre *.py %s/\([^a-z^A-Z]\)'\([^'^"]*\)'/\1"\2"/gce
 
 " Disable syntax highlighting for .rst files (big performance gain)
 autocmd BufRead,BufNewFile   *.rst setlocal syntax=OFF
