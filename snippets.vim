@@ -4,7 +4,7 @@
 " if __name__ == \"__main__\" block (µ is opt+m)
 :inoremap µµ if __name__ == "__main__":<cr>main()
 
-" pdb
+" pdb (opt+p opt+p)
 :inoremap ππ import pdb; pdb.set_trace()
 
 " file attrs (opt-f opt-f)
@@ -12,6 +12,9 @@
 
 " python function
 :inoremap ∆def def fxn():<cr>"""<cr>"""<cr>pass<up><up><up><left><left><left><ESC>
+
+" python class
+:inoremap çç class asdf (object):<cr>	"""<cr>"""<cr><cr>def __init__(self):<cr>	"""<cr>"""<cr>pass<up><up><up><up><up><up><up><left><left><left><left><left><ESC>
 
 " python function
 :inoremap † #TODO:<space><space>
