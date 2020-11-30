@@ -20,6 +20,9 @@ autocmd BufWritePre *.txt %s/\s\+$//e
 " runs when buffer is written to file (PYTHON ONLY)
 autocmd BufWritePre *.py %s/\([^a-z^A-Z]\)'\([^'^"]*\)'/\1"\2"/gce
 
+" Gitgutter
+autocmd BufWritePre *.py GitGutter
+
 " Disable syntax highlighting for .rst files (big performance gain)
 autocmd BufRead,BufNewFile   *.rst setlocal syntax=OFF
 
@@ -227,8 +230,8 @@ let g:gutentags_cache_dir = '~/.vim/ctags_dir'
 " Check Python files with flake8 and pylint.
 " let g:ale_echo_msg_format = '%linter% says "%s"'
 let b:ale_linters = ['flake8', 'pylint']
-let g:ale_python_flake8_options = '--ignore=E501, --max-line-length=119'
-let g:ale_python_pylint_options = '-d invalid-name,line-too-long,protected-access,too-few-public-methods,too-many-arguments,useless-object-inheritance'
+let g:ale_python_flake8_options = '--ignore=E501, --max-line-length=119, --ignore=W503'
+let g:ale_python_pylint_options = '-d invalid-name,line-too-long,protected-access,too-few-public-methods,too-many-arguments,useless-object-inheritance,no-member'
 
 " if you don't want linters to run on opening a file
 " and only lint on save

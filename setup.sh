@@ -63,6 +63,12 @@ git clone https://github.com/dense-analysis/ale.git
 # simpylfold - Python code folding
 git clone https://github.com/tmhedberg/SimpylFold.git
 
+# gitgutter
+git clone git@github.com:airblade/vim-gitgutter.git
+
+# vim-visual_multi
+git clone git@github.com:mg979/vim-visual-multi.git
+
 # Other dependencies (will only install if brew is installed)
 # Faster searching than ag
 [[ ! -z ripgrep ]] || install_via_brew_or_yum ripgrep
