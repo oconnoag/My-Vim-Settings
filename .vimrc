@@ -107,7 +107,7 @@ nnoremap k gk
 vnoremap <silent> <leader>y :<CR>:let @a=@" \| execute "normal! vgvy" \| let res=system("pbcopy", @") \| let @"=@a<CR>
 
 " Duplicate current line
-nmap <leader>d Yp
+nmap <leader><leader>d Yp
 
 " Toggle line numbers
 nmap <leader>n :set nu!<cr>
@@ -254,7 +254,7 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " Jedi
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:jedi#popup_on_dot = 0
-let g:jedi#completions_enabled = 0
+let g:jedi#completions_enabled = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " simpylfold

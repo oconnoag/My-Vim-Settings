@@ -69,6 +69,9 @@ git clone git@github.com:airblade/vim-gitgutter.git
 # vim-visual_multi
 git clone git@github.com:mg979/vim-visual-multi.git
 
+# jedi
+git clone --recursive https://github.com/davidhalter/jedi-vim.git
+
 # Other dependencies (will only install if brew is installed)
 # Faster searching than ag
 [[ ! -z ripgrep ]] || install_via_brew_or_yum ripgrep
