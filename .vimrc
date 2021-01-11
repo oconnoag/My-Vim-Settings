@@ -8,6 +8,10 @@ syntax on
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
 
+
+" leader
+let mapleader="\<Space>"      " Leader
+
 " Auto source vimrc (changes automatically take effect)
 autocmd! bufwritepost .vimrc source %
 
@@ -18,7 +22,15 @@ autocmd BufWritePre *.txt %s/\s\+$//e
 " Convert single quotes to double quotes for string literals (NOTE: will not
 " work on string literals that contain double quotes within them). Command
 " runs when buffer is written to file (PYTHON ONLY)
-autocmd BufWritePre *.py %s/\([^a-z^A-Z]\)'\([^'^"]*\)'/\1"\2"/gce
+"
+" Press <leader>W to toggle this functionality (works by toggling a boolean
+" that controls the autocmd
+" autocmd BufWritePre *.py %s/\([^a-z^A-Z]\)'\([^'^"]*\)'/\1"\2"/gce
+augroup QuotesFixer
+  autocmd!
+  autocmd BufWritePre *.py if get(g:, 'quotes_fixer', 1) | %s/\([^a-z^A-Z]\)'\([^'^"]*\)'/\1"\2"/gce | endif
+augroup END
+nnoremap <leader>W :let g:quotes_fixer = !get(g:, 'quotes_fixer', 1)<cr>:echo "Fix python quotes = " quotes_fixer<cr>
 
 " Gitgutter
 autocmd BufWritePre *.py GitGutter
@@ -79,9 +91,6 @@ highlight ColorColumn ctermbg=60               " Sets colors of colorcolumn
 set noerrorbells
 set visualbell
 set t_vb= 
-
-" leader
-let mapleader="\<Space>"      " Leader
 
 " searching
 set incsearch           " search as characters are entered
