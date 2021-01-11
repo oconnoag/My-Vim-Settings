@@ -72,10 +72,6 @@ git clone git@github.com:mg979/vim-visual-multi.git
 # jedi
 git clone --recursive https://github.com/davidhalter/jedi-vim.git
 
-# Other dependencies (will only install if brew is installed)
-# Faster searching than ag
-[[ ! -z ripgrep ]] || install_via_brew_or_yum ripgrep
-
 # ctags for glutentags
 if [ ! -z brew ]; then
     brew install --HEAD universal-ctags/universal-ctags/universal-ctags
