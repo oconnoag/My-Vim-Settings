@@ -150,11 +150,15 @@ nnoremap <buffer> <F5> :w <bar> :exec '!python' shellescape(@%, 1)<cr>
 :nnoremap  <C-h> :bprevious<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" C++ stuff
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+:nnoremap  <leader>0 :!g++ -Wall % && ./a.out && rm ./a.out<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Save & load sessions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <F3> :mksession! ~/.vim/.vim_session <cr> " Quick write session with F3
 map <F4> :source ~/.vim/.vim_session <cr> :highlight Normal ctermbg=234 <cr>   " And load session with F4 
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Persistent Undo 
@@ -299,6 +303,18 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load custom snippets - ÷ (insert mode leader) is <option-?>

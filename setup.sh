@@ -72,6 +72,13 @@ git clone git@github.com:mg979/vim-visual-multi.git
 # jedi
 git clone --recursive https://github.com/davidhalter/jedi-vim.git
 
+####################################################################################################
+# C++
+####################################################################################################
+git clone https://github.com/Raimondi/delimitMate.git
+git clone https://github.com/bfrg/vim-cpp-modern
+git clone --depth=1 https://github.com/vim-syntastic/syntastic.git:w
+
 # ctags for glutentags
 if [ ! -z brew ]; then
     brew install --HEAD universal-ctags/universal-ctags/universal-ctags
