@@ -18,3 +18,6 @@
 
 " python function
 :inoremap † #TODO:<space><space>
+
+" cpp default template
+:inoremap çç #include <iostream><cr><cr>int main(int argc, char *argv[]) {<cr><cr>}<up><tab>return 0;
