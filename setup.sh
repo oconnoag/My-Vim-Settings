@@ -72,6 +72,9 @@ git clone git@github.com:mg979/vim-visual-multi.git
 # jedi
 git clone --recursive https://github.com/davidhalter/jedi-vim.git
 
+# Rainbow csv
+git clone https://github.com/mechatroner/rainbow_csv.git
+
 ####################################################################################################
 # C++
 ####################################################################################################
