@@ -80,7 +80,7 @@ git clone https://github.com/mechatroner/rainbow_csv.git
 ####################################################################################################
 git clone https://github.com/Raimondi/delimitMate.git
 git clone https://github.com/bfrg/vim-cpp-modern
-git clone --depth=1 https://github.com/vim-syntastic/syntastic.git:w
+git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 
 # ctags for glutentags
 if [ ! -z brew ]; then
