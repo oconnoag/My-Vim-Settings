@@ -8,7 +8,6 @@ syntax on
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
 
-
 " leader
 let mapleader="\<Space>"      " Leader
 
@@ -242,7 +241,10 @@ let g:gutentags_cache_dir = '~/.vim/ctags_dir'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Check Python files with flake8 and pylint.
 " let g:ale_echo_msg_format = '%linter% says "%s"'
-let b:ale_linters = ['flake8', 'pylint']
+let b:ale_linters = ['flake8', 'pylint', 'gcc']
+
+let g:ale_cpp_gcc_options = '-std=c++11 -Wall'
+
 let g:ale_python_flake8_options = '--ignore=E501, --max-line-length=119, --ignore=W503'
 let g:ale_python_pylint_options = '-d invalid-name,line-too-long,protected-access,too-few-public-methods,too-many-arguments,useless-object-inheritance,no-member'
 
@@ -307,22 +309,32 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline+=%#warningmsg#
+" set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" set statusline+=%*
+"
+" let g:syntastic_cpp_compiler_options = ' --std=c++11'
+"
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " rainbow csv
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:disable_rainbow_key_mappings = 1
 
+nnoremap <leader>RR :RainbowDelim<cr>
 nnoremap <leader>RA :RainbowAlign<cr>
 nnoremap <leader>RS :RainbowShrink<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" git gutter
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>HU <Plug>(GitGutterUndoHunk)
+nnoremap <leader>HP <Plug>(GitGutterPreviewHunk)
+nnoremap <leader>HS <Plug>(GitGutterStageHunk)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load custom snippets - ÷ (insert mode leader) is <option-?>
