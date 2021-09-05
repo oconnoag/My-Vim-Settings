@@ -11,10 +11,10 @@
 :inoremap ƒƒ __author__ = "Alijah O'Connor"<cr>__copyright__ = "Copyright 2021, Invitae"<cr>__credits__ = ["Alijah O'Connor"]<cr>__maintainer__ = "Alijah O'Connor"<cr>__email__ = "alijah.oconnor@invitae.com"<cr>
 
 " python function
-:inoremap def<space> def fxn():<cr>"""<cr>"""<cr>pass<up><up><up><left><left><left><ESC>
+:inoremap def<cr> def fxn():<cr>"""<cr>"""<cr>pass<up><up><up><left><left><left><ESC>
 
 " python class
-:inoremap class<space> class asdf(object):<cr>"""<cr>"""<cr><cr>def __init__(self):<cr>	"""<cr>"""<cr>pass<up><up><up><up><up><up><up><left><left><left><left><left><ESC>
+:inoremap cls<cr> class asdf(object):<cr>"""<cr>"""<cr><cr>def __init__(self):<cr>	"""<cr>"""<cr>pass<up><up><up><up><up><up><up><left><left><left><left><left><ESC>
 
 " python function
 :inoremap † #TODO:<space><space>

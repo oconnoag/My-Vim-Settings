@@ -3,7 +3,7 @@ filetype off
 call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
-syntax on 
+syntax on
 
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
@@ -16,7 +16,6 @@ autocmd! bufwritepost .vimrc source %
 
 " Remove trailing whitespace from certain filetypes
 autocmd BufWritePre *.py %s/\s\+$//e
-autocmd BufWritePre *.txt %s/\s\+$//e
 
 " Convert single quotes to double quotes for string literals (NOTE: will not
 " work on string literals that contain double quotes within them). Command
@@ -35,7 +34,7 @@ nnoremap <leader>W :let g:quotes_fixer = !get(g:, 'quotes_fixer', 1)<cr>:echo "F
 autocmd BufWritePre *.py GitGutter
 
 " Disable syntax highlighting for .rst files (big performance gain)
-autocmd BufRead,BufNewFile   *.rst setlocal syntax=OFF
+autocmd BufRead,BufNewFile *.rst setlocal syntax=OFF
 
 " Syntax
 syntax enable
@@ -82,6 +81,10 @@ set splitbelow          " More natural splitting
 set title               " Puts filename in the tab
 set backspace=2         " Always backspace in insert mode
 
+" Don't automatically comment the next line after a comment (Really annoying when trying to bust out of 
+" commenting mode)
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 " Add color column for the textwidth of the document
 set colorcolumn=120     " Sets the textwidth line
 highlight ColorColumn ctermbg=60               " Sets colors of colorcolumn
@@ -89,7 +92,7 @@ highlight ColorColumn ctermbg=60               " Sets colors of colorcolumn
 " No error bells/flash
 set noerrorbells
 set visualbell
-set t_vb= 
+set t_vb=
 
 " searching
 set incsearch           " search as characters are entered
@@ -98,7 +101,7 @@ set ignorecase          " ignore case in search
 set smartcase           " tries to guess casing
 nnoremap <leader><space> :nohlsearch<CR>  " Press ,space to stop highlighting
 
-" Find string literals 
+" Find string literals
 nnoremap <leader>' /\v'([^"^']*)'<CR>
 
 " Screen splitting
@@ -148,6 +151,9 @@ nnoremap <buffer> <F5> :w <bar> :exec '!python' shellescape(@%, 1)<cr>
 :nnoremap  <C-l> :bnext<CR>
 :nnoremap  <C-h> :bprevious<CR>
 
+autocmd FileType python nnoremap <buffer> [[ ?^class<CR>
+autocmd FileType python nnoremap <buffer> ]] /^class<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " C++ stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -157,10 +163,10 @@ nnoremap <buffer> <F5> :w <bar> :exec '!python' shellescape(@%, 1)<cr>
 " Save & load sessions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <F3> :mksession! ~/.vim/.vim_session <cr> " Quick write session with F3
-map <F4> :source ~/.vim/.vim_session <cr> :highlight Normal ctermbg=234 <cr>   " And load session with F4 
+map <F4> :source ~/.vim/.vim_session <cr> :highlight Normal ctermbg=234 <cr>   " And load session with F4
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Persistent Undo 
+" Persistent Undo
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set undodir=~/.vim/undodir
 set undofile
@@ -169,7 +175,7 @@ set undofile
 " NerdTree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <Leader>f :NERDTreeToggle<Enter>         " Toggle the interface
-let NERDTreeQuitOnOpen = 1                        " NerdTree closes on open 
+let NERDTreeQuitOnOpen = 1                        " NerdTree closes on open
 
 " Close nerdtree if it is the only buffer open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -315,10 +321,21 @@ endif
 "
 " let g:syntastic_cpp_compiler_options = ' --std=c++11'
 "
+" let g:syntastic_mode_map = {
+"     \ "mode": "passive",
+"     \ "active_filetypes": ["cpp", "rust"],
+"     \ "passive_filetypes": [] }
+"
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 0
 " let g:syntastic_check_on_open = 0
 " let g:syntastic_check_on_wq = 0
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" rust-vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:rustfmt_autosave = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " rainbow csv
