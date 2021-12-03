@@ -5,7 +5,7 @@
 :inoremap µµ if __name__ == "__main__":<cr>main()
 
 " pdb (opt+p opt+p)
-:inoremap ππ import pdb; pdb.set_trace()
+:inoremap ππ import ipdb; ipdb.set_trace()
 
 " file attrs (opt-f opt-f)
 :inoremap ƒƒ __author__ = "Alijah O'Connor"<cr>__copyright__ = "Copyright 2021, Invitae"<cr>__credits__ = ["Alijah O'Connor"]<cr>__maintainer__ = "Alijah O'Connor"<cr>__email__ = "alijah.oconnor@invitae.com"<cr>
