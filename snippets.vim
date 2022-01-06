@@ -8,7 +8,7 @@
 :inoremap ππ import ipdb; ipdb.set_trace()
 
 " file attrs (opt-f opt-f)
-:inoremap ƒƒ __author__ = "Alijah O'Connor"<cr>__copyright__ = "Copyright 2021, Invitae"<cr>__credits__ = ["Alijah O'Connor"]<cr>__maintainer__ = "Alijah O'Connor"<cr>__email__ = "alijah.oconnor@invitae.com"<cr>
+:inoremap ƒƒ __author__ = "Alijah O'Connor"<cr>__copyright__ = "Copyright 2022, Invitae"<cr>__credits__ = ["Alijah O'Connor"]<cr>__maintainer__ = "Alijah O'Connor"<cr>__email__ = "alijah.oconnor@invitae.com"<cr>
 
 " python function
 :inoremap def<cr> def fxn():<cr>"""<cr>"""<cr>pass<up><up><up><left><left><left><ESC>
