@@ -24,11 +24,13 @@ autocmd BufWritePre *.py %s/\s\+$//e
 " Press <leader>W to toggle this functionality (works by toggling a boolean
 " that controls the autocmd
 " autocmd BufWritePre *.py %s/\([^a-z^A-Z]\)'\([^'^"]*\)'/\1"\2"/gce
-augroup QuotesFixer
-  autocmd!
-  autocmd BufWritePre *.py if get(g:, 'quotes_fixer', 1) | %s/\([^a-z^A-Z]\)'\([^'^"]*\)'/\1"\2"/gce | endif
-augroup END
-nnoremap <leader>W :let g:quotes_fixer = !get(g:, 'quotes_fixer', 1)<cr>:echo "Fix python quotes = " quotes_fixer<cr>
+
+" Uncomment me when ready to turn back on
+" augroup QuotesFixer
+"   autocmd!
+"   autocmd BufWritePre *.py if get(g:, 'quotes_fixer', 1) | %s/\([^a-z^A-Z]\)'\([^'^"]*\)'/\1"\2"/gce | endif
+" augroup END
+" nnoremap <leader>W :let g:quotes_fixer = !get(g:, 'quotes_fixer', 1)<cr>:echo "Fix python quotes = " quotes_fixer<cr>
 
 " Gitgutter
 autocmd BufWritePre *.py GitGutter

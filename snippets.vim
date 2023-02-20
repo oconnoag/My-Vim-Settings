@@ -5,10 +5,10 @@
 :inoremap µµ if __name__ == "__main__":<cr>main()
 
 " pdb (opt+p opt+p)
-:inoremap ππ import ipdb; ipdb.set_trace()
+:inoremap ππ import pdb; pdb.set_trace()
 
 " file attrs (opt-f opt-f)
-:inoremap ƒƒ __author__ = "Alijah O'Connor"<cr>__copyright__ = "Copyright 2022, Invitae"<cr>__credits__ = ["Alijah O'Connor"]<cr>__maintainer__ = "Alijah O'Connor"<cr>__email__ = "alijah.oconnor@invitae.com"<cr>
+:inoremap ƒƒ __author__ = "Alijah O'Connor"<cr>__copyright__ = "Copyright 2023, Invitae"<cr>__credits__ = ["Alijah O'Connor"]<cr>__maintainer__ = "Alijah O'Connor"<cr>__email__ = "alijah.oconnor@invitae.com"<cr>
 
 " python function
 :inoremap def<cr> def fxn():<cr>"""<cr>"""<cr>pass<up><up><up><left><left><left><ESC>
