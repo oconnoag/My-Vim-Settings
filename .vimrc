@@ -69,6 +69,7 @@ set smartindent          " even better autoindent (e.g. add indent after '{')
 set smarttab
 
 " UI Stuff
+set showcmd             " Display command (I like this for counting selected chars in visual mode
 set nowrap              " No wrapping long lines
 set noswapfile          " No swap files
 set number              " Line numbers
