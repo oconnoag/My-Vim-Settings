@@ -64,10 +64,10 @@ git clone https://github.com/dense-analysis/ale.git
 git clone https://github.com/tmhedberg/SimpylFold.git
 
 # gitgutter
-git clone git@github.com:airblade/vim-gitgutter.git
+git clone https://github.com/airblade/vim-gitgutter.git
 
 # vim-visual_multi
-git clone git@github.com:mg979/vim-visual-multi.git
+git clone https://github.com/mg979/vim-visual-multi.git
 
 # jedi
 git clone --recursive https://github.com/davidhalter/jedi-vim.git
@@ -85,8 +85,14 @@ git clone https://github.com/bfrg/vim-cpp-modern
 # Rust
 ####################################################################################################
 
- git clone git@github.com:rust-lang/rust.vim.git
- git clone git@github.com:rust-lang/rustfmt.git
+git clone https://github.com/rust-lang/rust.vim.git
+git clone https://github.com/rust-lang/rustfmt.git
+
+####################################################################################################
+# Nextflow
+####################################################################################################
+
+git clone https://github.com/LukeGoodsell/nextflow-vim.git
 
 # ctags for glutentags
 if [ ! -z brew ]; then
