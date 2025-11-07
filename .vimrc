@@ -6,7 +6,7 @@ filetype plugin indent on
 syntax on
 
 " To disable a plugin, add it's bundle name to the following list
-let g:pathogen_disabled = []
+let g:pathogen_disabled = ["delimitMate"]
 
 " leader
 let mapleader="\<Space>"      " Leader
